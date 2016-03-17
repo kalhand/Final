@@ -1,0 +1,46 @@
+<html ng-app="app">
+<head>
+	<title>Test Application</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
+	<script src="https:/cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js"></script>
+	<script src="js/addTask.js"></script>
+</head>
+<body>
+
+<div class="container" ng-app="app" ng-controller="commentController as comment">
+	<h2>Add Task</h2>
+	<form name="taskForm" role="form" ng-submit="comment.savecomment()">
+    <div class="row">
+	
+    	<input type="text" name="text" ng-model="comment.newcomment.text" placeholder="What's in your mind?" class="form-control" required>
+    	<span class="input-group-btn">
+    	<input type="submit"
+        	class="btn btn-primary" value="Add"
+			ng-disabled="commentForm.text.$error.required">
+          
+    	</span>
+    </div>
+  </form>
+
+  <ul class="list-group" ng-repeat="task in comment.comments | filterdComment:comment.filterType">
+  	<button type="button" ng-click="task.active = !task.active" ng-class="['list-group-item', {active: task.active}]">
+  		<span class="badge"><time am-time-ago="task.time"></time> </span>
+	    <span ng-bind="::task.text"></span>
+  	</button>
+	</ul>
+
+  
+    <button type="button" ng-click="comment.SetfilterType()" class="btn btn-default">All</button>
+    <button type="button" ng-click="comment.SetfilterType(true)" class="btn btn-default">Completed</button>
+    <button type="button" ng-click="comment.SetfilterType(false)" class="btn btn-default">Pending</button>
+  
+
+</div>
+
+</body>
+</html>
+
+
+

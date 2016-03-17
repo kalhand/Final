@@ -1,0 +1,13 @@
+<div ng-controller="btnCompleteCtrl">
+    <button class='btn' id="complete" onClick="complTask()">Complete</button>
+    <button class='btn' id="pending" onClick="pendingTask()">inComplete</button>
+    <button class='btn' ng-click="btnShowFn()">All Task</button>    
+        <div ng-show="showMe">
+            <ul id="ulContainer">
+                <li ng-repeat="x in jsonData" ng-class="{'complete':x.strikeflag == 'true'}" >
+                    {{ x.name }}
+                </li>
+            </ul>
+        </div>
+    
+    </div>

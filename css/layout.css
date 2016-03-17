@@ -1,0 +1,16 @@
+.complete {
+    text-decoration:line-through;
+}
+.pending {
+    
+}
+
+.user-panel {margin:5px;padding:5px;border:1px solid #555;background-color:#dedede;font-size:14pt;font-family:arial;}
+
+.user-status {color:#000000;}
+.user-status0 {color:#bb0000;}
+.user-status1 {color:#00bb00;}
+
+.toLeft {float:left;}
+.toRight {float:right;}
+.clear {clear:both;}
