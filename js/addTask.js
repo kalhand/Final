@@ -3,16 +3,13 @@
 
 	var myApp = angular.module('app', ['angularMoment']);
 	 
-	myApp.service('commentService', function () {
-	    
+	myApp.service('commentService', function () { 
 	    var comments = [];
 	    this.save = function (comment) {
 	        comment.time = new Date();
 	        comment.active = false;
 	        comments.push(comment);
 	    }
-	 
-	    
 	 
 	    //simply returns the comments list
 	    this.list = function () {
@@ -29,7 +26,6 @@
 	 
 	 	//save comment
 	    vm.savecomment = function () {
-	    	
 	        cs.save(vm.newcomment);
 	        vm.newcomment = {};
 	    }
